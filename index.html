@@ -33,6 +33,13 @@
 
     html { overflow-x: hidden; }
 
+    @supports (padding: max(0px)) {
+      .eyebrow, .hscroll, .contact-section, .footer {
+        padding-left: max(20px, env(safe-area-inset-left));
+        padding-right: max(20px, env(safe-area-inset-right));
+      }
+    }
+
     html, body {
       background: #1a1a1a;
       min-height: 100vh;
@@ -158,7 +165,7 @@
     /* ── CTA STRIP ── */
     .cta-strip {
       background: var(--red);
-      padding: 14px 24px;
+      padding: 14px 28px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -186,7 +193,7 @@
       display: flex;
       justify-content: center;
       gap: 28px;
-      padding: 14px 24px;
+      padding: 14px 28px;
       border-bottom: 1px solid var(--cream-border);
     }
 
@@ -214,7 +221,7 @@
       text-transform: uppercase;
       color: var(--navy);
       opacity: 0.3;
-      padding: 18px 20px 9px;
+      padding: 18px 24px 9px;
     }
 
     /* ── HORIZONTAL SCROLL ── */
@@ -222,7 +229,7 @@
       display: flex;
       gap: 10px;
       overflow-x: auto;
-      padding: 0 20px 16px;
+      padding: 0 24px 16px;
       scrollbar-width: none;
       -webkit-overflow-scrolling: touch;
     }
@@ -477,7 +484,7 @@
 
     /* ── CONTACT ── */
     .contact-section {
-      padding: 0 20px 8px;
+      padding: 0 24px 8px;
     }
 
     .contact-strip {
