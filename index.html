@@ -165,7 +165,7 @@
     /* ── CTA STRIP ── */
     .cta-strip {
       background: var(--red);
-      padding: 14px 20px;
+      padding: 14px 0;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -193,7 +193,7 @@
       display: flex;
       justify-content: center;
       gap: 28px;
-      padding: 14px 20px;
+      padding: 14px 0;
       border-bottom: 1px solid var(--cream-border);
     }
 
@@ -213,6 +213,11 @@
     .soc-link:hover { opacity: 0.85; }
     .soc-link i { font-size: 22px; }
 
+    /* ── CONTENT WRAPPER ── */
+    .content-wrap {
+      padding: 0 20px;
+    }
+
     /* ── SECTION EYEBROW ── */
     .eyebrow {
       font-size: 9px;
@@ -230,6 +235,7 @@
       gap: 10px;
       overflow-x: auto;
       padding: 0 20px 16px;
+      margin: 0 -20px;
       scrollbar-width: none;
       -webkit-overflow-scrolling: touch;
     }
@@ -523,7 +529,7 @@
 
     /* ── FOOTER ── */
     .footer {
-      padding: 20px 24px 48px;
+      padding: 20px 0 48px;
       text-align: center;
       font-size: 10px;
       color: var(--navy);
@@ -582,6 +588,7 @@
     <div class="cta-arr">→</div>
   </a>
 
+  <div class="content-wrap">
   <!-- ── SOCIAL ── -->
   <div class="social-row">
     <a class="soc-link" href="https://www.instagram.com/kai.circle/" target="_blank" rel="noopener" aria-label="Instagram">
@@ -780,6 +787,7 @@
 
   </div>
 
+  </div><!-- end content-wrap -->
   <div class="footer">Kai CIRCLE · Whitefield, Bangalore · 2026</div>
 
 </div>
