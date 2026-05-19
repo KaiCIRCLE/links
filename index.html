@@ -2,115 +2,73 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kai CIRCLE</title>
   <meta name="description" content="A professional development ecosystem for educators. Cambridge certified. Bangalore based." />
-
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@500&display=swap" rel="stylesheet" />
-
-  <!-- Tabler Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
 
   <style>
-    :root {
-      --navy: #172d47;
-      --teal: #a2dada;
-      --yellow: #f1e26d;
-      --coral: #f5846b;
-      --red: #e75353;
-      --sage: #d0e3a3;
-      --cream: #faf8f5;
-      --cream-border: #e8e3d8;
-      --cream-dark: #f0ece4;
-      --font-display: 'DM Serif Display', Georgia, serif;
-      --font-body: 'DM Sans', sans-serif;
-    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
-
-    html { overflow-x: hidden; }
-
-    @supports (padding: max(0px)) {
-      .eyebrow, .hscroll, .contact-section, .footer {
-        padding-left: max(20px, env(safe-area-inset-left));
-        padding-right: max(20px, env(safe-area-inset-right));
-      }
-    }
-
-    html, body {
-      background: #1a1a1a;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      font-family: var(--font-body);
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #faf8f5;
+      color: #172d47;
+      -webkit-tap-highlight-color: transparent;
     }
 
     .page {
-      width: 100%;
       max-width: 430px;
-      background: var(--cream);
+      margin: 0 auto;
+      background: #faf8f5;
       min-height: 100vh;
-      position: relative;
-      overflow-x: hidden;
     }
 
-    /* ── HERO ── */
+    /* HERO */
     .hero {
       position: relative;
       height: 220px;
       overflow: hidden;
     }
 
-    .hero-img {
+    .hero img.bg {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center;
       display: block;
-      transition: transform 0.6s ease;
     }
 
     .hero-scrim {
       position: absolute;
       inset: 0;
-      background: linear-gradient(
-        to bottom,
-        rgba(23,45,71,0.1) 0%,
-        rgba(23,45,71,0.75) 100%
-      );
+      background: linear-gradient(to bottom, rgba(23,45,71,0.1) 0%, rgba(23,45,71,0.78) 100%);
     }
 
     .hero-content {
       position: absolute;
       inset: 0;
-      padding: 24px 20px;
+      padding: 20px;
       display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-    }
-
-    .hero-top {
-      display: flex;
-      align-items: center;
-      gap: 13px;
+      align-items: flex-end;
     }
 
     .hero-logo {
       width: 68px;
       height: 68px;
       border-radius: 16px;
-      border: 2px solid var(--yellow);
+      border: 2px solid #f1e26d;
       background: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
       flex-shrink: 0;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+      margin-right: 13px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
     }
 
     .hero-logo img {
@@ -120,15 +78,12 @@
     }
 
     .hero-name {
-      font-family: var(--font-body);
       font-size: 24px;
+      font-weight: 700;
       color: #fff;
       line-height: 1.05;
       letter-spacing: -0.02em;
-      font-weight: 700;
     }
-
-    .hero-name span { color: #fff; }
 
     .hero-loc {
       font-size: 10px;
@@ -138,42 +93,15 @@
       margin-top: 4px;
     }
 
-    .hero-chips {
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-    }
-
-    .chip {
-      font-size: 10px;
-      font-weight: 600;
-      padding: 4px 11px;
-      border-radius: 20px;
-      letter-spacing: 0.03em;
-      background: rgba(255,255,255,0.15);
-      color: #fff;
-      border: 1px solid rgba(255,255,255,0.22);
-      backdrop-filter: blur(6px);
-    }
-
-    .chip-hi {
-      background: var(--yellow);
-      color: var(--navy);
-      border-color: var(--yellow);
-    }
-
-    /* ── CTA STRIP ── */
-    .cta-strip {
-      background: var(--red);
-      padding: 14px 0;
+    /* CTA — full width, padding inside */
+    a.cta-strip {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      background: #e75353;
+      padding: 15px 20px;
       text-decoration: none;
-      transition: background 0.2s;
     }
-
-    .cta-strip:hover { background: #cc3e3e; }
 
     .cta-label {
       font-size: 17px;
@@ -185,94 +113,90 @@
     .cta-arr {
       font-size: 22px;
       color: #fff;
-      opacity: 0.85;
     }
 
-    /* ── SOCIAL ROW ── */
+    /* WRAP — single 20px padding container */
+    .wrap {
+      padding: 0 20px;
+    }
+
+    /* SOCIAL */
     .social-row {
       display: flex;
       justify-content: center;
-      gap: 28px;
-      padding: 14px 0;
-      border-bottom: 1px solid var(--cream-border);
+      gap: 24px;
+      padding: 16px 0;
+      border-bottom: 1px solid #e8e3d8;
     }
 
-    .soc-link {
+    a.soc-link {
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 4px;
       text-decoration: none;
-      color: var(--navy);
+      color: #172d47;
       opacity: 0.45;
       font-size: 11px;
       font-weight: 600;
-      transition: opacity 0.2s;
     }
 
-    .soc-link:hover { opacity: 0.85; }
-    .soc-link i { font-size: 22px; }
+    a.soc-link i { font-size: 22px; }
 
-    /* ── MAIN WRAPPER ── */
-    .main-wrap {
-      padding: 0 20px;
-    }
-
-    /* ── SECTION EYEBROW ── */
+    /* EYEBROW */
     .eyebrow {
       font-size: 9px;
       font-weight: 700;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: var(--navy);
+      color: #172d47;
       opacity: 0.3;
-      padding: 16px 0 8px;
+      padding: 18px 0 10px;
     }
 
-    /* ── HORIZONTAL SCROLL ── */
+    /* HORIZONTAL SCROLL
+       margin: 0 -20px breaks out of .wrap
+       padding: 0 20px re-indents cards from screen edge
+       This is the standard technique — used once, consistently */
     .hscroll {
       display: flex;
       gap: 10px;
       overflow-x: auto;
-      padding-bottom: 12px;
+      margin: 0 -20px;
+      padding: 0 20px 14px;
       scrollbar-width: none;
       -webkit-overflow-scrolling: touch;
     }
 
+    .hscroll::-webkit-scrollbar { display: none; }
+
     .hscroll::after {
-      content: "";
-      padding-right: 4px;
+      content: '';
+      display: block;
+      min-width: 10px;
       flex-shrink: 0;
     }
 
-    .hscroll::-webkit-scrollbar { display: none; }
-
-    /* ── COURSE CARDS ── */
-    .course-card {
-      flex: 0 0 238px;
+    /* COURSE CARDS */
+    a.course-card {
+      flex: 0 0 230px;
       background: #fff;
-      border: 1.5px solid var(--cream-border);
+      border: 1.5px solid #e8e3d8;
       border-radius: 15px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
       text-decoration: none;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .course-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(231,83,83,0.12);
     }
 
     .course-top-bar {
       height: 5px;
-      background: var(--teal);
+      background: #a2dada;
       flex-shrink: 0;
     }
 
     .course-body {
-      padding: 15px 16px;
+      padding: 14px 15px;
       flex: 1;
       display: flex;
       flex-direction: column;
@@ -282,15 +206,15 @@
     .course-name {
       font-size: 13px;
       font-weight: 600;
-      color: var(--navy);
+      color: #172d47;
       line-height: 1.4;
     }
 
     .course-meta {
       font-size: 11px;
-      color: var(--navy);
+      color: #172d47;
       opacity: 0.4;
-      margin-top: 7px;
+      margin-top: 6px;
     }
 
     .course-badge {
@@ -300,149 +224,70 @@
       font-weight: 700;
       padding: 4px 11px;
       border-radius: 20px;
-      letter-spacing: 0.03em;
-      background: var(--navy);
-      color: var(--yellow);
+      background: #172d47;
+      color: #f1e26d;
       align-self: flex-start;
     }
 
-    .course-badge.soft {
-      background: var(--cream-dark);
-      color: var(--navy);
-    }
+    .course-badge.soft { background: #f0ece4; color: #172d47; }
 
-    /* ── EVENT CARDS ── */
-    .event-card {
-      flex: 0 0 200px;
+    /* EVENT CARDS */
+    a.event-card {
+      flex: 0 0 195px;
       background: #fff;
-      border: 1.5px solid var(--cream-border);
+      border: 1.5px solid #e8e3d8;
       border-radius: 15px;
-      padding: 15px;
+      padding: 14px;
       display: flex;
       flex-direction: column;
       gap: 10px;
       text-decoration: none;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .event-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(23,45,71,0.1);
     }
 
     .event-date {
-      background: var(--navy);
+      background: #172d47;
       border-radius: 9px;
-      padding: 7px 13px;
+      padding: 7px 12px;
       display: flex;
       align-items: baseline;
       gap: 5px;
       align-self: flex-start;
     }
 
-    .event-day {
-      font-size: 20px;
-      font-weight: 700;
-      color: var(--yellow);
-      font-family: var(--font-display);
-      line-height: 1;
-    }
+    .event-day { font-size: 20px; font-weight: 700; color: #f1e26d; line-height: 1; }
+    .event-month { font-size: 10px; color: #a2dada; text-transform: uppercase; letter-spacing: 0.08em; }
+    .event-type { font-size: 9px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #e75353; }
+    .event-name { font-size: 13px; font-weight: 600; color: #172d47; line-height: 1.35; }
+    .event-meta { font-size: 11px; color: #172d47; opacity: 0.4; }
+    .event-link { font-size: 11px; font-weight: 600; color: #172d47; opacity: 0.25; margin-top: auto; align-self: flex-end; }
 
-    .event-month {
-      font-size: 10px;
-      color: var(--teal);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .event-type {
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--red);
-    }
-
-    .event-name {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--navy);
-      line-height: 1.35;
-    }
-
-    .event-meta {
-      font-size: 11px;
-      color: var(--navy);
-      opacity: 0.4;
-      margin-top: 2px;
-    }
-
-    .event-link {
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--navy);
-      opacity: 0.25;
-      margin-top: auto;
-      align-self: flex-end;
-    }
-
-    /* ── PROGRAMME CARDS ── */
-    .prog-card {
-      flex: 0 0 142px;
-      background: var(--teal);
+    /* PROGRAMME CARDS */
+    a.prog-card {
+      flex: 0 0 140px;
+      background: #a2dada;
       border-radius: 15px;
-      padding: 15px;
+      padding: 14px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      min-height: 115px;
+      min-height: 112px;
       text-decoration: none;
-      transition: transform 0.2s, filter 0.2s;
     }
 
-    .prog-card:hover {
-      transform: translateY(-2px);
-      filter: brightness(1.05);
-    }
+    .prog-card i { font-size: 22px; color: #172d47; opacity: 0.55; }
+    .prog-label { font-size: 13px; font-weight: 700; color: #172d47; line-height: 1.25; margin-top: 8px; }
+    .prog-desc { font-size: 10px; color: #172d47; opacity: 0.5; line-height: 1.4; margin-top: 2px; }
 
-    .prog-card i {
-      font-size: 22px;
-      color: var(--navy);
-      opacity: 0.55;
-    }
-
-    .prog-label {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--navy);
-      line-height: 1.25;
-      margin-top: 8px;
-    }
-
-    .prog-desc {
-      font-size: 10px;
-      color: var(--navy);
-      opacity: 0.5;
-      line-height: 1.4;
-      margin-top: 2px;
-    }
-
-    /* ── BLOG CARDS ── */
-    .blog-card {
-      flex: 0 0 185px;
+    /* BLOG CARDS */
+    a.blog-card {
+      flex: 0 0 175px;
       background: #fff;
-      border: 1.5px solid var(--cream-border);
+      border: 1.5px solid #e8e3d8;
       border-radius: 15px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
       text-decoration: none;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .blog-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(23,45,71,0.1);
     }
 
     .blog-img {
@@ -450,7 +295,7 @@
       aspect-ratio: 1 / 1;
       object-fit: cover;
       display: block;
-      background: var(--cream-dark);
+      background: #f0ece4;
     }
 
     .blog-body {
@@ -458,190 +303,105 @@
       display: flex;
       flex-direction: column;
       flex: 1;
-      border-top: 3px solid var(--red);
+      border-top: 3px solid #e75353;
     }
 
-    .blog-cat {
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--red);
-      margin-bottom: 6px;
-    }
+    .blog-cat { font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #e75353; margin-bottom: 5px; }
+    .blog-title { font-size: 12px; font-weight: 600; color: #172d47; line-height: 1.4; flex: 1; }
+    .blog-read { font-size: 11px; font-weight: 600; color: #172d47; opacity: 0.25; margin-top: 8px; align-self: flex-end; }
 
-    .blog-title {
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--navy);
-      line-height: 1.4;
-      flex: 1;
-    }
-
-    .blog-read {
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--navy);
-      opacity: 0.25;
-      margin-top: 8px;
-      align-self: flex-end;
-    }
-
-    /* ── CONTACT ── */
-
-
-    .contact-strip {
+    /* CONTACT */
+    a.contact-strip {
       display: flex;
       align-items: center;
       gap: 13px;
       padding: 13px 16px;
       border-radius: 13px;
       background: #fff;
-      border: 1.5px solid var(--cream-border);
+      border: 1.5px solid #e8e3d8;
       margin-bottom: 8px;
       text-decoration: none;
-      transition: background 0.2s;
     }
 
-    .contact-strip:hover { background: var(--cream-dark); }
+    .contact-strip i { font-size: 18px; color: #172d47; opacity: 0.35; flex-shrink: 0; }
+    .con-lbl { font-size: 10px; color: #172d47; opacity: 0.4; }
+    .con-val { font-size: 13px; font-weight: 600; color: #172d47; }
 
-    .contact-strip i {
-      font-size: 18px;
-      color: var(--navy);
-      opacity: 0.35;
-      flex-shrink: 0;
-    }
-
-    .con-lbl {
-      font-size: 10px;
-      color: var(--navy);
-      opacity: 0.4;
-    }
-
-    .con-val {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--navy);
-    }
-
-    /* ── FOOTER ── */
+    /* FOOTER */
     .footer {
-      padding: 20px 20px 48px;
+      padding: 20px 0 48px;
       text-align: center;
       font-size: 10px;
-      color: var(--navy);
+      color: #172d47;
       opacity: 0.25;
       letter-spacing: 0.1em;
       text-transform: uppercase;
     }
-
-    /* ── ENTRANCE ANIMATIONS ── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(12px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    .hero-content { animation: fadeUp 0.5s ease both; }
-    .cta-strip    { animation: fadeUp 0.5s 0.1s ease both; }
-    .social-row   { animation: fadeUp 0.5s 0.15s ease both; }
-    .hscroll      { animation: fadeUp 0.5s 0.2s ease both; }
   </style>
 </head>
 <body>
 <div class="page">
 
-  <!-- ── HERO ── -->
-  <!-- REPLACE src below with your actual building photo URL -->
+  <!-- HERO -->
   <div class="hero">
-    <img
-      class="hero-img"
-      src="https://kaicircle.com/wp-content/uploads/2020/03/Gallery-our-campus-KC-01.jpg"
-      alt="Kai Circle campus, Whitefield Bangalore"
-    />
+    <img class="bg" src="https://kaicircle.com/wp-content/uploads/2020/03/Gallery-our-campus-KC-01.jpg" alt="Kai Circle campus" />
     <div class="hero-scrim"></div>
     <div class="hero-content">
-      <div class="hero-top">
-        <div class="hero-logo">
-          <img
-            src="https://kaicircle.com/wp-content/uploads/2025/07/Kai-circle-01-scaled.png"
-            alt="Kai Circle logo"
-            onerror="this.parentElement.innerHTML='<span style=\'font-size:14px;font-weight:700;color:#172d47\'>KC</span>'"
-          />
-        </div>
-        <div>
-          <div class="hero-name">Kai <span>CIRCLE</span></div>
-          <div class="hero-loc">Whitefield · Bangalore</div>
-        </div>
+      <div class="hero-logo">
+        <img src="https://kaicircle.com/wp-content/uploads/2025/07/Kai-circle-01-scaled.png" alt="Kai Circle logo"
+          onerror="this.parentElement.innerHTML='<span style=\'font-size:14px;font-weight:700;color:#172d47\'>KC</span>'" />
       </div>
-
+      <div>
+        <div class="hero-name">Kai CIRCLE</div>
+        <div class="hero-loc">Whitefield · Bangalore</div>
+      </div>
     </div>
   </div>
 
-  <!-- ── ENQUIRE CTA ── -->
+  <!-- CTA -->
   <a class="cta-strip" href="https://kaicircle.com/kai-circle-inquiry-registration-form/" target="_blank" rel="noopener">
-    <div>
-      <div class="cta-label">Start your journey with us</div>
-    </div>
+    <div class="cta-label">Start your journey with us</div>
     <div class="cta-arr">→</div>
   </a>
 
-  <!-- ── SOCIAL ── -->
-  <div class="main-wrap">
+  <!-- WRAP — single padded container for everything below -->
+  <div class="wrap">
+
+    <!-- SOCIAL -->
     <div class="social-row">
-      <a class="soc-link" href="https://www.instagram.com/kai.circle/" target="_blank" rel="noopener" aria-label="Instagram">
-        <i class="ti ti-brand-instagram"></i>
-        <span>Instagram</span>
-      </a>
-      <a class="soc-link" href="https://www.linkedin.com/company/kai-circle" target="_blank" rel="noopener" aria-label="LinkedIn">
-        <i class="ti ti-brand-linkedin"></i>
-        <span>LinkedIn</span>
-      </a>
-      <a class="soc-link" href="https://www.facebook.com/kai.circle" target="_blank" rel="noopener" aria-label="Facebook">
-        <i class="ti ti-brand-facebook"></i>
-        <span>Facebook</span>
-      </a>
-      <a class="soc-link" href="https://wa.me/917204144123" target="_blank" rel="noopener" aria-label="WhatsApp">
-        <i class="ti ti-brand-whatsapp"></i>
-        <span>WhatsApp</span>
-      </a>
+      <a class="soc-link" href="https://www.instagram.com/kai.circle/" target="_blank" rel="noopener"><i class="ti ti-brand-instagram"></i><span>Instagram</span></a>
+      <a class="soc-link" href="https://www.linkedin.com/company/kai-circle" target="_blank" rel="noopener"><i class="ti ti-brand-linkedin"></i><span>LinkedIn</span></a>
+      <a class="soc-link" href="https://www.facebook.com/kai.circle" target="_blank" rel="noopener"><i class="ti ti-brand-facebook"></i><span>Facebook</span></a>
+      <a class="soc-link" href="https://wa.me/917204144123" target="_blank" rel="noopener"><i class="ti ti-brand-whatsapp"></i><span>WhatsApp</span></a>
     </div>
 
-  <!-- ── UPCOMING COURSES ── -->
+    <!-- UPCOMING COURSES -->
     <div class="eyebrow">Upcoming courses</div>
     <div class="hscroll">
       <a class="course-card" href="https://kaicircle.com/certificate-programs/" target="_blank" rel="noopener">
         <div class="course-top-bar"></div>
         <div class="course-body">
-          <div>
-            <div class="course-name">Cambridge Certificate in Early Years Good Practice</div>
-            <div class="course-meta">Jan 2026 · 4–6 months · Blended learning</div>
-          </div>
+          <div><div class="course-name">Cambridge Certificate in Early Years Good Practice</div><div class="course-meta">Jan 2026 · 4–6 months · Blended learning</div></div>
           <span class="course-badge">Registering now</span>
         </div>
       </a>
       <a class="course-card" href="https://kaicircle.com/certificate-programs/" target="_blank" rel="noopener">
         <div class="course-top-bar"></div>
         <div class="course-body">
-          <div>
-            <div class="course-name">Cambridge Certificate in Teaching &amp; Learning</div>
-            <div class="course-meta">Feb 2026 · 4–6 months · Blended learning</div>
-          </div>
+          <div><div class="course-name">Cambridge Certificate in Teaching &amp; Learning</div><div class="course-meta">Feb 2026 · 4–6 months · Blended learning</div></div>
           <span class="course-badge soft">Register interest</span>
         </div>
       </a>
       <a class="course-card" href="https://kaicircle.com/upcoming-workshop/" target="_blank" rel="noopener">
         <div class="course-top-bar"></div>
         <div class="course-body">
-          <div>
-            <div class="course-name">Workshops &amp; Micro Credentials</div>
-            <div class="course-meta">Ongoing · Short format · Multiple dates</div>
-          </div>
+          <div><div class="course-name">Workshops &amp; Micro Credentials</div><div class="course-meta">Ongoing · Short format · Multiple dates</div></div>
           <span class="course-badge soft">View all dates</span>
         </div>
       </a>
     </div>
 
-  <!-- ── UPCOMING EVENTS ── -->
+    <!-- UPCOMING EVENTS -->
     <div class="eyebrow">Upcoming events</div>
     <div class="hscroll">
       <a class="event-card" href="#" target="_blank" rel="noopener">
@@ -661,63 +421,116 @@
       </a>
     </div>
 
-  <!-- ── PROGRAMMES ── -->
+    <!-- OUR PROGRAMMES -->
     <div class="eyebrow">Our programmes</div>
     <div class="hscroll">
       <a class="prog-card" href="https://kaicircle.com/diploma/" target="_blank" rel="noopener">
-        <i class="ti ti-certificate" aria-hidden="true"></i>
-        <div><div class="prog-label">Diploma Courses</div><div class="prog-desc">Long-form qualifications</div></div>
+        <i class="ti ti-certificate"></i><div><div class="prog-label">Diploma Courses</div><div class="prog-desc">Long-form qualifications</div></div>
       </a>
       <a class="prog-card" href="https://kaicircle.com/coaching/" target="_blank" rel="noopener">
-        <i class="ti ti-user-heart" aria-hidden="true"></i>
-        <div><div class="prog-label">Coaching</div><div class="prog-desc">1:1 educator coaching</div></div>
+        <i class="ti ti-user-heart"></i><div><div class="prog-label">Coaching</div><div class="prog-desc">1:1 educator coaching</div></div>
       </a>
       <a class="prog-card" href="https://kaicircle.com/research/" target="_blank" rel="noopener">
-        <i class="ti ti-flask" aria-hidden="true"></i>
-        <div><div class="prog-label">Research</div><div class="prog-desc">Early years initiatives</div></div>
+        <i class="ti ti-flask"></i><div><div class="prog-label">Research</div><div class="prog-desc">Early years initiatives</div></div>
       </a>
       <a class="prog-card" href="https://kaicircle.com/leadership-courses/" target="_blank" rel="noopener">
-        <i class="ti ti-briefcase" aria-hidden="true"></i>
-        <div><div class="prog-label">Leadership</div><div class="prog-desc">For school leaders</div></div>
+        <i class="ti ti-briefcase"></i><div><div class="prog-label">Leadership</div><div class="prog-desc">For school leaders</div></div>
       </a>
     </div>
 
-  <!-- ── BLOG (auto-populated from RSS) ── -->
+    <!-- BLOG -->
     <div class="eyebrow">From the blog</div>
     <div class="hscroll" id="blog-scroll">
-      <div class="blog-card blog-skeleton">
-        <div class="blog-img" style="background:var(--cream-dark)"></div>
-        <div class="blog-body">
-          <div class="blog-cat" style="background:var(--cream-dark);color:transparent;border-radius:4px;width:60px">&nbsp;</div>
-          <div class="blog-title" style="background:var(--cream-dark);color:transparent;border-radius:4px;height:48px;margin-top:4px">&nbsp;</div>
-        </div>
-      </div>
-      <div class="blog-card blog-skeleton">
-        <div class="blog-img" style="background:var(--cream-dark)"></div>
-        <div class="blog-body">
-          <div class="blog-cat" style="background:var(--cream-dark);color:transparent;border-radius:4px;width:60px">&nbsp;</div>
-          <div class="blog-title" style="background:var(--cream-dark);color:transparent;border-radius:4px;height:48px;margin-top:4px">&nbsp;</div>
-        </div>
-      </div>
+      <a class="blog-card" style="opacity:0.4;pointer-events:none;">
+        <div class="blog-img"></div>
+        <div class="blog-body"><div class="blog-cat" style="background:#f0ece4;color:transparent;border-radius:4px;">&nbsp;&nbsp;&nbsp;&nbsp;</div><div class="blog-title" style="background:#f0ece4;color:transparent;border-radius:4px;height:40px;margin-top:4px;"></div></div>
+      </a>
+      <a class="blog-card" style="opacity:0.4;pointer-events:none;">
+        <div class="blog-img"></div>
+        <div class="blog-body"><div class="blog-cat" style="background:#f0ece4;color:transparent;border-radius:4px;">&nbsp;&nbsp;&nbsp;&nbsp;</div><div class="blog-title" style="background:#f0ece4;color:transparent;border-radius:4px;height:40px;margin-top:4px;"></div></div>
+      </a>
     </div>
 
-  <!-- ── GET IN TOUCH ── -->
+    <!-- GET IN TOUCH -->
     <div class="eyebrow">Get in touch</div>
     <a class="contact-strip" href="https://wa.me/917204144123" target="_blank" rel="noopener">
-      <i class="ti ti-brand-whatsapp"></i>
-      <div><div class="con-lbl">WhatsApp us</div><div class="con-val">+91 72041 44123</div></div>
+      <i class="ti ti-brand-whatsapp"></i><div><div class="con-lbl">WhatsApp us</div><div class="con-val">+91 72041 44123</div></div>
     </a>
     <a class="contact-strip" href="mailto:connect@kaicircle.com">
-      <i class="ti ti-mail"></i>
-      <div><div class="con-lbl">Email</div><div class="con-val">connect@kaicircle.com</div></div>
+      <i class="ti ti-mail"></i><div><div class="con-lbl">Email</div><div class="con-val">connect@kaicircle.com</div></div>
     </a>
     <a class="contact-strip" href="https://kaicircle.com" target="_blank" rel="noopener">
-      <i class="ti ti-globe"></i>
-      <div><div class="con-lbl">Website</div><div class="con-val">kaicircle.com</div></div>
+      <i class="ti ti-globe"></i><div><div class="con-lbl">Website</div><div class="con-val">kaicircle.com</div></div>
     </a>
 
-  </div><!-- end main-wrap -->
-  <div class="footer">Kai CIRCLE · Whitefield, Bangalore · 2026</div>
+    <div class="footer">Kai CIRCLE · Whitefield, Bangalore · 2026</div>
 
+  </div><!-- end wrap -->
+</div><!-- end page -->
+
+<script>
+  async function loadBlogPosts() {
+    const scroll = document.getElementById('blog-scroll');
+    const ALL_URL = 'https://kaicircle.com/kai-chai/';
+    const FALLBACK_IMG = 'https://kaicircle.com/wp-content/uploads/2025/09/cropped-Kai-circle-full-logo-02-270x270.png';
+    const RSS_URL = 'https://kaicircle.com/feed/';
+
+    function buildCard(url, img, cat, title, label) {
+      const a = document.createElement('a');
+      a.className = 'blog-card';
+      a.href = url;
+      a.target = '_blank';
+      a.rel = 'noopener';
+      a.innerHTML = `
+        <img class="blog-img" src="${img}" alt="${title}"
+          onerror="this.src='${FALLBACK_IMG}';this.style.objectFit='contain';this.style.padding='20px';this.style.background='#f0ece4'" />
+        <div class="blog-body">
+          <div class="blog-cat">${cat}</div>
+          <div class="blog-title">${title}</div>
+          <div class="blog-read">${label}</div>
+        </div>`;
+      return a;
+    }
+
+    function showFallback() {
+      scroll.innerHTML = '';
+      scroll.appendChild(buildCard('https://kaicircle.com/kaichai/teaching-on-autopilot-the-silent-struggle-many-educators-faces/', 'https://kaicircle.com/wp-content/uploads/2026/05/KC-Blog-01-scaled.jpg', 'Kai Chai', 'Teaching on Autopilot: The Silent Struggle Many Educators Face', 'Read →'));
+      scroll.appendChild(buildCard('https://kaicircle.com/kaichai/summer-break-for-educators-a-time-for-reflection-renewal-and-real-growth/', 'https://kaicircle.com/wp-content/uploads/2026/04/Untitled-design.jpg', 'Kai Chai', 'Summer Break for Educators: Reflection, Renewal & Real Growth', 'Read →'));
+      scroll.appendChild(buildCard(ALL_URL, FALLBACK_IMG, 'Blog', 'View all articles', 'View all →'));
+    }
+
+    try {
+      const res = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(RSS_URL)}&count=4`);
+      const data = await res.json();
+      if (data.status === 'ok' && data.items?.length) {
+        scroll.innerHTML = '';
+        data.items.slice(0, 3).forEach(p => scroll.appendChild(buildCard(p.link || ALL_URL, p.thumbnail || FALLBACK_IMG, p.categories?.[0] || 'Kai Chai', p.title, 'Read →')));
+        scroll.appendChild(buildCard(ALL_URL, FALLBACK_IMG, 'Blog', 'View all articles', 'View all →'));
+        return;
+      }
+    } catch(e) {}
+
+    try {
+      const res = await fetch(`https://corsproxy.io/?${encodeURIComponent(RSS_URL)}`);
+      const xml = new DOMParser().parseFromString(await res.text(), 'text/xml');
+      const items = [...xml.querySelectorAll('item')].slice(0, 3).map(item => ({
+        title: item.querySelector('title')?.textContent || '',
+        link: item.querySelector('link')?.textContent || ALL_URL,
+        img: (() => { const m = (item.querySelector('encoded')?.textContent || '').match(/src="([^"]+\.(jpg|jpeg|png|webp))"/i); return m ? m[1] : FALLBACK_IMG; })(),
+        cat: item.querySelector('category')?.textContent || 'Kai Chai'
+      }));
+      if (items.length) {
+        scroll.innerHTML = '';
+        items.forEach(p => scroll.appendChild(buildCard(p.link, p.img, p.cat, p.title, 'Read →')));
+        scroll.appendChild(buildCard(ALL_URL, FALLBACK_IMG, 'Blog', 'View all articles', 'View all →'));
+        return;
+      }
+    } catch(e) {}
+
+    showFallback();
+  }
+
+  loadBlogPosts();
+</script>
 </body>
 </html>
