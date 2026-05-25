@@ -56,6 +56,12 @@
       align-items: flex-end;
     }
 
+    .hero-row {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+    }
+
     .hero-logo {
       width: 68px;
       height: 68px;
@@ -67,7 +73,6 @@
       justify-content: center;
       overflow: hidden;
       flex-shrink: 0;
-      margin-right: 13px;
       box-shadow: 0 4px 16px rgba(0,0,0,0.2);
     }
 
@@ -86,11 +91,11 @@
     }
 
     .hero-loc {
-      font-size: 10px;
-      color: rgba(255,255,255,0.6);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-top: 4px;
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.4;
+      margin-top: 5px;
     }
 
     /* CTA — full width, padding inside */
@@ -341,16 +346,18 @@
 
   <!-- HERO -->
   <div class="hero">
-    <img class="bg" src="https://kaicircle.com/wp-content/uploads/2026/05/KC-Welcome-P1ost-scaled.webp" alt="Kai Circle campus" />
+    <img class="bg" src="https://kaicircle.com/wp-content/uploads/2020/03/Gallery-our-campus-KC-01.jpg" alt="Kai Circle campus" />
     <div class="hero-scrim"></div>
     <div class="hero-content">
-      <div class="hero-logo">
-        <img src="https://kaicircle.com/wp-content/uploads/2025/07/Kai-circle-01-scaled.png" alt="Kai Circle logo"
-          onerror="this.parentElement.innerHTML='<span style=\'font-size:14px;font-weight:700;color:#172d47\'>KC</span>'" />
-      </div>
-      <div>
-        <div class="hero-name">Kai CIRCLE</div>
-        <div class="hero-loc">Whitefield · Bangalore</div>
+      <div class="hero-row">
+        <div class="hero-logo">
+          <img src="https://kaicircle.com/wp-content/uploads/2025/07/Kai-circle-01-scaled.png" alt="Kai Circle logo"
+            onerror="this.parentElement.innerHTML='<span style=\'font-size:14px;font-weight:700;color:#172d47\'>KC</span>'" />
+        </div>
+        <div>
+          <div class="hero-name">Kai CIRCLE</div>
+          <div class="hero-loc">Centre for Innovation, Research, Collaboration, Leadership &amp; Empowerment</div>
+        </div>
       </div>
     </div>
   </div>
