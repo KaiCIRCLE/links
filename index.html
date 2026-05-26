@@ -63,8 +63,8 @@
     }
 
     .hero-logo {
-      width: 68px;
-      height: 68px;
+      width: 80px;
+      height: 80px;
       border-radius: 50%;
       border: 2px solid #f1e26d;
       background: #fff;
@@ -77,8 +77,8 @@
     }
 
     .hero-logo img {
-      width: 64px;
-      height: 64px;
+      width: 72px;
+      height: 72px;
       object-fit: contain;
     }
 
@@ -125,13 +125,26 @@
       padding: 0 20px;
     }
 
+    /* WHO ARE WE */
+    .who-are-we {
+      padding: 20px;
+      background: #fff;
+      border-bottom: 1px solid #e8e3d8;
+    }
+
+    .who-are-we p {
+      font-size: 13px;
+      color: #172d47;
+      line-height: 1.7;
+      opacity: 0.75;
+    }
+
     /* SOCIAL */
     .social-row {
       display: flex;
       justify-content: center;
       gap: 24px;
       padding: 16px 0;
-      border-bottom: 1px solid #e8e3d8;
     }
 
     a.soc-link {
@@ -362,6 +375,12 @@
     </div>
   </div>
 
+  <!-- WHO ARE WE -->
+  <div class="who-are-we">
+    <div class="eyebrow" style="padding-top:0;padding-bottom:10px;opacity:0.4;">Who we are</div>
+    <p>We are a dynamic learning and professional development ecosystem rooted in child development science and committed to educator wellbeing. Whether you are beginning your teaching journey, seeking international certification, or looking to deepen your impact through coaching, research, or peer learning, Kai CIRCLE is your place to grow.</p>
+  </div>
+
   <!-- CTA -->
   <a class="cta-strip" href="https://kaicircle.com/kai-circle-inquiry-registration-form/" target="_blank" rel="noopener">
     <div class="cta-label">Start your professional journey with us</div>
@@ -371,35 +390,27 @@
   <!-- WRAP -->
   <div class="wrap">
 
-    <!-- SOCIAL -->
-    <div class="social-row">
-      <a class="soc-link" href="https://www.instagram.com/kai.circle/" target="_blank" rel="noopener"><i class="ti ti-brand-instagram"></i><span>Instagram</span></a>
-      <a class="soc-link" href="https://www.linkedin.com/company/kai-circle" target="_blank" rel="noopener"><i class="ti ti-brand-linkedin"></i><span>LinkedIn</span></a>
-      <a class="soc-link" href="https://www.facebook.com/kai.circle" target="_blank" rel="noopener"><i class="ti ti-brand-facebook"></i><span>Facebook</span></a>
-      <a class="soc-link" href="https://wa.me/917204144123" target="_blank" rel="noopener"><i class="ti ti-brand-whatsapp"></i><span>WhatsApp</span></a>
-    </div>
-
     <!-- UPCOMING COURSES -->
     <div class="eyebrow">Upcoming courses</div>
     <div class="hscroll">
       <a class="course-card" href="https://docs.google.com/forms/d/e/1FAIpQLSfidGq_bIHsstOM5-f83W2IXT5u8P785WMuylbzsiic8aAwvg/viewform" target="_blank" rel="noopener">
         <div class="course-top-bar"></div>
         <div class="course-body">
-          <div><div class="course-name">Cambridge Certificate in Early Years Good Practice</div><div class="course-meta">Jan 2026 · 4–6 months · Blended learning</div></div>
+          <div><div class="course-name">Cambridge International Certificate of Early Years Good Practice</div><div class="course-meta">Jan 2026 · 4–6 months · Blended learning</div></div>
           <span class="course-badge">Registering now</span>
         </div>
       </a>
-      <a class="course-card" href="https://kaicircle.com/kai-circle-inquiry-registration-form/" target="_blank" rel="noopener">
+      <a class="course-card" href="https://kaicircle.com/certificate-programs/" target="_blank" rel="noopener">
         <div class="course-top-bar"></div>
         <div class="course-body">
-          <div><div class="course-name">Leadership in Practice</div><div class="course-meta">Aug 2026 · For Emerging Leaders &amp; Coordinators</div></div>
+          <div><div class="course-name">Leadership in Practice</div><div class="course-meta">Aug 2026 · For Those in Leadership Positions</div></div>
           <span class="course-badge soft">Coming soon</span>
         </div>
       </a>
-      <a class="course-card" href="https://kaicircle.com/kai-circle-inquiry-registration-form/" target="_blank" rel="noopener">
+      <a class="course-card" href="https://kaicircle.com/upcoming-workshop/" target="_blank" rel="noopener">
         <div class="course-top-bar"></div>
         <div class="course-body">
-          <div><div class="course-name">Foundation of Leadership</div><div class="course-meta">Date to be announced · For aspiring &amp; new school leaders</div></div>
+          <div><div class="course-name">Foundation of Leadership</div><div class="course-meta">Aug 2026 · For Aspiring &amp; New School Leaders</div></div>
           <span class="course-badge soft">Coming soon</span>
         </div>
       </a>
@@ -457,6 +468,14 @@
       </a>
     </div>
 
+    <!-- SOCIAL -->
+    <div class="social-row">
+      <a class="soc-link" href="https://www.instagram.com/kai.circle/" target="_blank" rel="noopener"><i class="ti ti-brand-instagram"></i><span>Instagram</span></a>
+      <a class="soc-link" href="https://www.linkedin.com/company/kai-circle" target="_blank" rel="noopener"><i class="ti ti-brand-linkedin"></i><span>LinkedIn</span></a>
+      <a class="soc-link" href="https://www.facebook.com/kai.circle" target="_blank" rel="noopener"><i class="ti ti-brand-facebook"></i><span>Facebook</span></a>
+      <a class="soc-link" href="https://wa.me/917204144123" target="_blank" rel="noopener"><i class="ti ti-brand-whatsapp"></i><span>WhatsApp</span></a>
+    </div>
+
     <!-- GET IN TOUCH -->
     <div class="eyebrow">Get in touch</div>
     <a class="contact-strip" href="https://wa.me/917204144123" target="_blank" rel="noopener">
@@ -502,15 +521,16 @@
       scroll.innerHTML = '';
       scroll.appendChild(buildCard('https://kaicircle.com/kaichai/teaching-on-autopilot-the-silent-struggle-many-educators-faces/', 'https://kaicircle.com/wp-content/uploads/2026/05/KC-Blog-01-scaled.jpg', 'Kai Chai', 'Teaching on Autopilot: The Silent Struggle Many Educators Face', 'Read →'));
       scroll.appendChild(buildCard('https://kaicircle.com/kaichai/summer-break-for-educators-a-time-for-reflection-renewal-and-real-growth/', 'https://kaicircle.com/wp-content/uploads/2026/04/Untitled-design.jpg', 'Kai Chai', 'Summer Break for Educators: Reflection, Renewal & Real Growth', 'Read →'));
+      scroll.appendChild(buildCard('https://kaicircle.com/kai-chai/', FALLBACK_IMG, 'Kai Chai', 'Explore more insights from our educators', 'Read →'));
       scroll.appendChild(buildCard(ALL_URL, FALLBACK_IMG, 'Blog', 'View all articles', 'View all →'));
     }
 
     try {
-      const res = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(RSS_URL)}&count=4`);
+      const res = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(RSS_URL)}&count=5`);
       const data = await res.json();
       if (data.status === 'ok' && data.items?.length) {
         scroll.innerHTML = '';
-        data.items.slice(0, 3).forEach(p => scroll.appendChild(buildCard(p.link || ALL_URL, p.thumbnail || FALLBACK_IMG, p.categories?.[0] || 'Kai Chai', p.title, 'Read →')));
+        data.items.slice(0, 4).forEach(p => scroll.appendChild(buildCard(p.link || ALL_URL, p.thumbnail || FALLBACK_IMG, p.categories?.[0] || 'Kai Chai', p.title, 'Read →')));
         scroll.appendChild(buildCard(ALL_URL, FALLBACK_IMG, 'Blog', 'View all articles', 'View all →'));
         return;
       }
@@ -519,7 +539,7 @@
     try {
       const res = await fetch(`https://corsproxy.io/?${encodeURIComponent(RSS_URL)}`);
       const xml = new DOMParser().parseFromString(await res.text(), 'text/xml');
-      const items = [...xml.querySelectorAll('item')].slice(0, 3).map(item => ({
+      const items = [...xml.querySelectorAll('item')].slice(0, 4).map(item => ({
         title: item.querySelector('title')?.textContent || '',
         link: item.querySelector('link')?.textContent || ALL_URL,
         img: (() => { const m = (item.querySelector('encoded')?.textContent || '').match(/src="([^"]+\.(jpg|jpeg|png|webp))"/i); return m ? m[1] : FALLBACK_IMG; })(),
