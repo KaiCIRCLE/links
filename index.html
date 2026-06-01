@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="https://kaicircle.com/wp-content/uploads/2025/09/cropped-Kai-circle-full-logo-02-270x270.png" />
   <title>Kai CIRCLE</title>
   <meta name="description" content="A professional development ecosystem for educators. Cambridge certified. Bangalore based." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -455,16 +456,48 @@
     </div>
     -->
 
-    <!-- BLOG -->
+    <!-- BLOG — hardcoded cards. To update: change img src, href, and blog-title on any card -->
     <div class="eyebrow">From the blog</div>
-    <div class="hscroll" id="blog-scroll">
-      <a class="blog-card" style="opacity:0.4;pointer-events:none;">
-        <div class="blog-img"></div>
-        <div class="blog-body"><div class="blog-cat" style="background:#f0ece4;color:transparent;border-radius:4px;">&nbsp;&nbsp;&nbsp;&nbsp;</div><div class="blog-title" style="background:#f0ece4;color:transparent;border-radius:4px;height:40px;margin-top:4px;"></div></div>
+    <div class="hscroll">
+      <a class="blog-card" href="https://kaicircle.com/kaichai/teaching-on-autopilot-the-silent-struggle-many-educators-faces/" target="_blank" rel="noopener">
+        <img class="blog-img" src="https://kaicircle.com/wp-content/uploads/2026/05/KC-Blog-01-scaled.jpg" alt="Teaching on Autopilot" />
+        <div class="blog-body">
+          <div class="blog-cat">Kai Chai</div>
+          <div class="blog-title">Teaching on Autopilot: The Silent Struggle Many Educators Face</div>
+          <div class="blog-read">Read →</div>
+        </div>
       </a>
-      <a class="blog-card" style="opacity:0.4;pointer-events:none;">
-        <div class="blog-img"></div>
-        <div class="blog-body"><div class="blog-cat" style="background:#f0ece4;color:transparent;border-radius:4px;">&nbsp;&nbsp;&nbsp;&nbsp;</div><div class="blog-title" style="background:#f0ece4;color:transparent;border-radius:4px;height:40px;margin-top:4px;"></div></div>
+      <a class="blog-card" href="https://kaicircle.com/kaichai/summer-break-for-educators-a-time-for-reflection-renewal-and-real-growth/" target="_blank" rel="noopener">
+        <img class="blog-img" src="https://kaicircle.com/wp-content/uploads/2026/04/Untitled-design.jpg" alt="Summer Break for Educators" />
+        <div class="blog-body">
+          <div class="blog-cat">Kai Chai</div>
+          <div class="blog-title">Summer Break for Educators: A Time for Reflection, Renewal, and Real Growth</div>
+          <div class="blog-read">Read →</div>
+        </div>
+      </a>
+      <a class="blog-card" href="https://kaicircle.com/kaichai/teacher-challenges-today/" target="_blank" rel="noopener">
+        <img class="blog-img" src="https://kaicircle.com/wp-content/uploads/2026/03/Website-Banner-KC-new-blog-1.jpg" alt="Education Today" />
+        <div class="blog-body">
+          <div class="blog-cat">Kai Chai</div>
+          <div class="blog-title">Education Today: A Profession of Purpose Under Pressure</div>
+          <div class="blog-read">Read →</div>
+        </div>
+      </a>
+      <a class="blog-card" href="https://kaicircle.com/kaichai/leadership-in-a-culture-of-change/" target="_blank" rel="noopener">
+        <img class="blog-img" src="https://kaicircle.com/wp-content/uploads/2025/12/fasdafd-01-scaled.jpg" alt="Leadership in a Culture of Change" />
+        <div class="blog-body">
+          <div class="blog-cat">Kai Chai</div>
+          <div class="blog-title">Leadership in a Culture of Change: A Reflection for School Leaders</div>
+          <div class="blog-read">Read →</div>
+        </div>
+      </a>
+      <a class="blog-card" href="https://kaicircle.com/kai-chai/" target="_blank" rel="noopener">
+        <img class="blog-img" src="https://kaicircle.com/wp-content/uploads/2025/09/cropped-Kai-circle-full-logo-02-270x270.png" alt="View all" style="object-fit:contain;padding:20px;background:#f0ece4;" />
+        <div class="blog-body">
+          <div class="blog-cat">Blog</div>
+          <div class="blog-title">View all articles</div>
+          <div class="blog-read">View all →</div>
+        </div>
       </a>
     </div>
 
@@ -493,70 +526,5 @@
   </div><!-- end wrap -->
 </div><!-- end page -->
 
-<script>
-  async function loadBlogPosts() {
-    const scroll = document.getElementById('blog-scroll');
-    const ALL_URL = 'https://kaicircle.com/kai-chai/';
-    const FALLBACK_IMG = 'https://kaicircle.com/wp-content/uploads/2025/09/cropped-Kai-circle-full-logo-02-270x270.png';
-    const RSS_URL = 'https://kaicircle.com/feed/';
-
-    function buildCard(url, img, cat, title, label) {
-      const a = document.createElement('a');
-      a.className = 'blog-card';
-      a.href = url;
-      a.target = '_blank';
-      a.rel = 'noopener';
-      a.innerHTML = `
-        <img class="blog-img" src="${img}" alt="${title}"
-          onerror="this.src='${FALLBACK_IMG}';this.style.objectFit='contain';this.style.padding='20px';this.style.background='#f0ece4'" />
-        <div class="blog-body">
-          <div class="blog-cat">${cat}</div>
-          <div class="blog-title">${title}</div>
-          <div class="blog-read">${label}</div>
-        </div>`;
-      return a;
-    }
-
-    function showFallback() {
-      scroll.innerHTML = '';
-      scroll.appendChild(buildCard('https://kaicircle.com/kaichai/teaching-on-autopilot-the-silent-struggle-many-educators-faces/', 'https://kaicircle.com/wp-content/uploads/2026/05/KC-Blog-01-scaled.jpg', 'Kai Chai', 'Teaching on Autopilot: The Silent Struggle Many Educators Face', 'Read →'));
-      scroll.appendChild(buildCard('https://kaicircle.com/kaichai/summer-break-for-educators-a-time-for-reflection-renewal-and-real-growth/', 'https://kaicircle.com/wp-content/uploads/2026/04/Untitled-design.jpg', 'Kai Chai', 'Summer Break for Educators: Reflection, Renewal & Real Growth', 'Read →'));
-      scroll.appendChild(buildCard('https://kaicircle.com/kai-chai/', FALLBACK_IMG, 'Kai Chai', 'Explore more insights from our educators', 'Read →'));
-      scroll.appendChild(buildCard(ALL_URL, FALLBACK_IMG, 'Blog', 'View all articles', 'View all →'));
-    }
-
-    try {
-      const res = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(RSS_URL)}&count=6`);
-      const data = await res.json();
-      if (data.status === 'ok' && data.items?.length) {
-        scroll.innerHTML = '';
-        data.items.slice(0, 6).forEach(p => scroll.appendChild(buildCard(p.link || ALL_URL, p.thumbnail || FALLBACK_IMG, p.categories?.[0] || 'Kai Chai', p.title, 'Read →')));
-        scroll.appendChild(buildCard(ALL_URL, FALLBACK_IMG, 'Blog', 'View all articles', 'View all →'));
-        return;
-      }
-    } catch(e) {}
-
-    try {
-      const res = await fetch(`https://corsproxy.io/?${encodeURIComponent(RSS_URL)}`);
-      const xml = new DOMParser().parseFromString(await res.text(), 'text/xml');
-      const items = [...xml.querySelectorAll('item')].slice(0, 6).map(item => ({
-        title: item.querySelector('title')?.textContent || '',
-        link: item.querySelector('link')?.textContent || ALL_URL,
-        img: (() => { const m = (item.querySelector('encoded')?.textContent || '').match(/src="([^"]+\.(jpg|jpeg|png|webp))"/i); return m ? m[1] : FALLBACK_IMG; })(),
-        cat: item.querySelector('category')?.textContent || 'Kai Chai'
-      }));
-      if (items.length) {
-        scroll.innerHTML = '';
-        items.forEach(p => scroll.appendChild(buildCard(p.link, p.img, p.cat, p.title, 'Read →')));
-        scroll.appendChild(buildCard(ALL_URL, FALLBACK_IMG, 'Blog', 'View all articles', 'View all →'));
-        return;
-      }
-    } catch(e) {}
-
-    showFallback();
-  }
-
-  loadBlogPosts();
-</script>
 </body>
 </html>
