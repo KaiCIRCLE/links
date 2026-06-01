@@ -526,11 +526,11 @@
     }
 
     try {
-      const res = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(RSS_URL)}&count=5`);
+      const res = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(RSS_URL)}&count=6`);
       const data = await res.json();
       if (data.status === 'ok' && data.items?.length) {
         scroll.innerHTML = '';
-        data.items.slice(0, 4).forEach(p => scroll.appendChild(buildCard(p.link || ALL_URL, p.thumbnail || FALLBACK_IMG, p.categories?.[0] || 'Kai Chai', p.title, 'Read →')));
+        data.items.slice(0, 6).forEach(p => scroll.appendChild(buildCard(p.link || ALL_URL, p.thumbnail || FALLBACK_IMG, p.categories?.[0] || 'Kai Chai', p.title, 'Read →')));
         scroll.appendChild(buildCard(ALL_URL, FALLBACK_IMG, 'Blog', 'View all articles', 'View all →'));
         return;
       }
@@ -539,7 +539,7 @@
     try {
       const res = await fetch(`https://corsproxy.io/?${encodeURIComponent(RSS_URL)}`);
       const xml = new DOMParser().parseFromString(await res.text(), 'text/xml');
-      const items = [...xml.querySelectorAll('item')].slice(0, 4).map(item => ({
+      const items = [...xml.querySelectorAll('item')].slice(0, 6).map(item => ({
         title: item.querySelector('title')?.textContent || '',
         link: item.querySelector('link')?.textContent || ALL_URL,
         img: (() => { const m = (item.querySelector('encoded')?.textContent || '').match(/src="([^"]+\.(jpg|jpeg|png|webp))"/i); return m ? m[1] : FALLBACK_IMG; })(),
